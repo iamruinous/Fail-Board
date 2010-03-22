@@ -1,0 +1,16 @@
+Fail Macruby App
+
+1. Pull code down.
+2. Open project in xcode.
+3. Select your build target for Mac OSX 10.5 or 10.6 depending on your
+current OS and installed SDK's.
+4. Select the fail target for a release build.
+5. Build the application with cmd-B or cmd-shift-B to build and run the
+app.
+6. A build directory will now be present in the project directory. This is
+where you can go to under the release directory to get the .app file for
+the application.
+
+*** This project was thrown together in one day and is not in any kind of
+finished state and my still have bugs and/or crash unexpectedly. I plan on
+adding features and polishing the app as I have time.
