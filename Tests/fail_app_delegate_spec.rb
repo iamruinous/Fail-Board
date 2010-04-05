@@ -1,5 +1,3 @@
-class "FailAppDelegate"
-
 describe "Hell" do
   before do
   end

@@ -12,13 +12,16 @@ class FailAppDelegate
   
   attr_accessor :window, :projects, :status_label, :timer
   attr_accessor :total_fail_label, :total_pass_label, :failed_projects_label
+  attr_accessor :red, :green
   
   def initialize()
 	self.projects = []
+	self.red = NSColor.colorWithCalibratedRed(0.498, green:0.0, blue:0.00, alpha:1.0)
+	self.green = NSColor.colorWithCalibratedRed(0.439, green:0.733, blue:0.286, alpha:1.0)
   end
   
   def applicationDidFinishLaunching(notification)
-	window.setBackgroundColor NSColor.redColor
+	window.setBackgroundColor red
 	
 	font = NSFont.fontWithName("Helvetica-Bold", size:40.0)
 	status_label.setAllowsEditingTextAttributes(true)
@@ -90,9 +93,6 @@ class FailAppDelegate
 		NSLog "NO RESULTS FROM BUILDER"
 		display_builder_fail_message
 	end
-	
-	#sleep 30
-	#run_updater_loop
   end
   
   def has_failures?
@@ -106,6 +106,10 @@ class FailAppDelegate
   
   def passing
 	projects.select{|project| project.valueForKey(:status) == "Success" || project.valueForKey(:status) ==  "success" }
+  end
+  
+  def project_total
+	passing_count + failure_count
   end
   
   def failure_count
@@ -132,13 +136,13 @@ class FailAppDelegate
   
   def show_passing
 	self.failed_projects_label.stringValue = ""
-	window.setBackgroundColor NSColor.greenColor
+	window.setBackgroundColor calcBackgroundColor
 	self.status_label.stringValue = "Pass"
 	update_totals
   end
   
   def show_failing
-	window.setBackgroundColor NSColor.redColor
+	window.setBackgroundColor calcBackgroundColor
 	update_failed_projects_label
 	self.status_label.stringValue = "Fail"
 	update_totals
@@ -147,6 +151,23 @@ class FailAppDelegate
   def update_totals
     self.total_pass_label.stringValue = "Pass: #{passing_count}"
     self.total_fail_label.stringValue = "Fail: #{failure_count}"
+  end
+  
+  def calcBackgroundColor
+	case passing_count.to_f/project_total.to_f
+	when (0.0)..(0.25)
+	  red
+	when (0.26)..(0.50)
+	  NSColor.colorWithCalibratedRed(1.0, green:0.0, blue:0.0, alpha:1.0)
+	when (0.51)..(0.75)
+	  NSColor.colorWithCalibratedRed(0.8, green:0.157, blue:0.153, alpha:1.0)
+	when (0.76)..(0.85)
+	  NSColor.colorWithCalibratedRed(0.859, green:0.576, blue:0.58, alpha:1.0)
+	when (0.86)..(0.95)
+	  NSColor.colorWithCalibratedRed(0.698, green:0.851, blue:0.58, alpha:1.0)
+	when (0.75)..(1.0)
+	  green
+	end
   end
 
   def dealloc()

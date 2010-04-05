@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		06F9BB9E115848D100166B77 /* Release */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 06F9BBA91158491C00166B77 /* Build configuration list for PBXAggregateTarget "Release" */;
+			buildPhases = (
+				06F9BBAB11584AFE00166B77 /* Embed, Compile, Fix */,
+			);
+			dependencies = (
+			);
+			name = Release;
+			productName = Release;
+		};
 		172754BD107597F200D0347B /* Unit Tests */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 172754C7107597F400D0347B /* Build configuration list for PBXAggregateTarget "Unit Tests" */;
@@ -47,9 +58,9 @@
 		06F32E9D11557A840099F047 /* fail_app_delegate_spec.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */; };
 		06F32FBF1156AEB50099F047 /* data_request.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32FBE1156AEB50099F047 /* data_request.rb */; };
 		06F331121156F5B30099F047 /* fail.icns in Resources */ = {isa = PBXBuildFile; fileRef = 06F331111156F5B30099F047 /* fail.icns */; };
+		06F9BC801159D5F900166B77 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9BC7F1159D5F900166B77 /* MacRuby.framework */; };
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
-		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -60,7 +71,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D1107260486CEB800E47090 /* fail */;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
 			remoteInfo = fail;
 		};
 /* End PBXContainerItemProxy section */
@@ -84,6 +95,7 @@
 		06F32E8F115579DA0099F047 /* TestFail-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestFail-Info.plist"; sourceTree = "<group>"; };
 		06F32FBE1156AEB50099F047 /* data_request.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = data_request.rb; sourceTree = "<group>"; };
 		06F331111156F5B30099F047 /* fail.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fail.icns; sourceTree = "<group>"; };
+		06F9BC7F1159D5F900166B77 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -94,7 +106,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* fail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,7 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
+				06F9BC801159D5F900166B77 /* MacRuby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +142,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				06F9BC7F1159D5F900166B77 /* MacRuby.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 				4D1A51A110A4FF5D0046A98A /* Compile */,
 				4D1A51A510A4FF640046A98A /* Embed */,
 				06F32E8D115579DA0099F047 /* TestFail */,
+				06F9BB9E115848D100166B77 /* Release */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +320,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/local/bin/macruby;
 			shellScript = "# Include the Bacon libraries\nrequire \"rubygems\"\nrequire \"bacon\"\nrequire 'spec'\n\n# Tell MacRuby where to find our framework\nENV['DYLD_FRAMEWORK_PATH'] = ENV['BUILT_PRODUCTS_DIR']\n\n# Setup Bacon to report on tests at the end\nBacon.summary_on_exit\n\n# Load all of the *_spec test files in the test bundle\nDir.glob('./*_spec.rb').each do |test_file|\n  require test_file\nend\n";
+		};
+		06F9BBAB11584AFE00166B77 /* Embed, Compile, Fix */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed, Compile, Fix";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=\"$PATH:/usr/local/bin\" macruby_deploy --embed --compile \"$TARGET_BUILD_DIR/$PROJECT_NAME.app\"\n \ninstall_name_tool -change /Library/Frameworks/MacRuby.framework/Versions/0.6/usr/lib/libmacruby.dylib \"@executable_path/../Frameworks/MacRuby.framework/Versions/0.6/usr/lib/libmacruby.dylib\" \"$TARGET_BUILD_DIR/$PROJECT_NAME.app/Contents/MacOS/$PROJECT_NAME\"\n \nfor F in $TARGET_BUILD_DIR/$PROJECT_NAME.app/Contents/Resources/*.rbo; do\n  install_name_tool -change /Library/Frameworks/MacRuby.framework/Versions/0.6/usr/lib/libmacruby.dylib \"@executable_path/../Frameworks/MacRuby.framework/Versions/0.6/usr/lib/libmacruby.dylib\" \"$F\"\ndone";
 		};
 		172754BC107597F200D0347B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -451,6 +477,31 @@
 			};
 			name = Release;
 		};
+		06F9BB9F115848D100166B77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Release;
+			};
+			name = Debug;
+		};
+		06F9BBA0115848D100166B77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Release;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		172754BE107597F200D0347B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -517,10 +568,12 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -538,10 +591,15 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
@@ -549,6 +607,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = fail;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -588,6 +647,15 @@
 			buildConfigurations = (
 				06F32E91115579DB0099F047 /* Debug */,
 				06F32E92115579DB0099F047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06F9BBA91158491C00166B77 /* Build configuration list for PBXAggregateTarget "Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F9BB9F115848D100166B77 /* Debug */,
+				06F9BBA0115848D100166B77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
