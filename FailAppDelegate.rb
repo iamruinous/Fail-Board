@@ -11,27 +11,19 @@ class FailAppDelegate
   PROJECTS_RSS_URL = "#{PROJECTS_URL}.rss"
   
   attr_accessor :window, :projects, :status_label, :timer
-  attr_accessor :total_fail_label, :total_pass_label, :failed_projects_label
-  attr_accessor :red, :green
+  attr_accessor :total_fail_label, :total_pass_label, :fail_label, :table_view
   
   def initialize()
 	self.projects = []
-	self.red = NSColor.colorWithCalibratedRed(0.498, green:0.0, blue:0.00, alpha:1.0)
-	self.green = NSColor.colorWithCalibratedRed(0.439, green:0.733, blue:0.286, alpha:1.0)
   end
   
   def applicationDidFinishLaunching(notification)
-	window.setBackgroundColor red
+	window.setBackgroundColor(NSColor.colorWithCalibratedRed(0.498, green:0.0, blue:0.00, alpha:1.0))
 	
-	font = NSFont.fontWithName("Helvetica-Bold", size:40.0)
+	font = NSFont.fontWithName("Helvetica-Bold", size:38.0)
 	status_label.setAllowsEditingTextAttributes(true)
 	status_label.setTextColor(NSColor.whiteColor)
 	status_label.setFont(font)
-	
-	font = NSFont.fontWithName("Helvetica-Bold", size:20.0)
-	failed_projects_label.setAllowsEditingTextAttributes(true)
-	failed_projects_label.setTextColor(NSColor.whiteColor)
-	failed_projects_label.setFont(font)
 	
 	font = NSFont.fontWithName("Helvetica", size:18.0)
 	total_pass_label.setAllowsEditingTextAttributes(true)
@@ -42,13 +34,15 @@ class FailAppDelegate
 	total_fail_label.setTextColor(NSColor.whiteColor)
 	total_fail_label.setFont(font)
 	
+	table_view.setAutoresizesAllColumnsToFit(true)
+	
 	# Set up timer to fetch projects feed
 	fetch_feed
 	set_timer
   end
   
   def set_timer
-	self.timer = NSTimer.scheduledTimerWithTimeInterval(300.0, target:self, selector:(:fetch_feed), userInfo:nil, repeats:true)
+	self.timer = NSTimer.scheduledTimerWithTimeInterval(180.0, target:self, selector:(:fetch_feed), userInfo:nil, repeats:true)
   end
   
   def refresh_feed(sender)
@@ -80,15 +74,20 @@ class FailAppDelegate
 			
 			committer = item.nodesForXPath('description', error:nil).first.stringValue
 			committer = committer.match(/committed by (\w*\s?\w*) (?:on|<|&lt;)/) ? committer.match(/committed by (\w*\s?\w*) (?:on|<|&lt;)/)[1] : 'Integrum User'
+		    
+			date = item.nodesForXPath('pubDate', error:nil).first.stringValue
+			date = date.match(/(.*) \d\d:/) ? date.match(/(.*) \d\d:/)[1] : Date.today.strftime("%D, %d %M, %Y")
 			
 			{
-				:title     => "#{title}",
+				:project   => "#{title}",
 				:status	   => "#{status}", 
-				:committer => "#{committer}"
+				:committer => "#{committer}",
+				:date      => "#{date}"
 			}
 		end
 
 		has_failures? ? show_failing : show_passing
+		table_view.reloadData
 	else
 		NSLog "NO RESULTS FROM BUILDER"
 		display_builder_fail_message
@@ -120,13 +119,6 @@ class FailAppDelegate
 	passing.count
   end
   
-  def update_failed_projects_label
-    self.failed_projects_label.stringValue = ""
-	failures.each do |failure|
-	  self.failed_projects_label.stringValue += failure.valueForKey(:title) + " - " + failure.valueForKey(:committer) + "\n"
-	end
-  end
-  
   def display_builder_fail_message	
 	self.total_pass_label.stringValue = "Pass: -"
 	self.total_fail_label.stringValue = "Fail: -"
@@ -135,15 +127,15 @@ class FailAppDelegate
   end
   
   def show_passing
-	self.failed_projects_label.stringValue = ""
 	window.setBackgroundColor calcBackgroundColor
+	table_view.setBackgroundColor calcBackgroundColor
 	self.status_label.stringValue = "Pass"
 	update_totals
   end
   
   def show_failing
 	window.setBackgroundColor calcBackgroundColor
-	update_failed_projects_label
+	table_view.setBackgroundColor calcBackgroundColor
 	self.status_label.stringValue = "Fail"
 	update_totals
   end
@@ -156,7 +148,7 @@ class FailAppDelegate
   def calcBackgroundColor
 	case passing_count.to_f/project_total.to_f
 	when (0.0)..(0.25)
-	  red
+	  NSColor.colorWithCalibratedRed(0.498, green:0.0, blue:0.00, alpha:1.0)
 	when (0.26)..(0.50)
 	  NSColor.colorWithCalibratedRed(1.0, green:0.0, blue:0.0, alpha:1.0)
 	when (0.51)..(0.75)
@@ -166,7 +158,7 @@ class FailAppDelegate
 	when (0.86)..(0.95)
 	  NSColor.colorWithCalibratedRed(0.698, green:0.851, blue:0.58, alpha:1.0)
 	when (0.75)..(1.0)
-	  green
+	  NSColor.colorWithCalibratedRed(0.439, green:0.733, blue:0.286, alpha:1.0)
 	end
   end
 

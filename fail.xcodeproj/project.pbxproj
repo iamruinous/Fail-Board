@@ -54,6 +54,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		06555F3611697F880091DF78 /* TableDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06555F3511697F880091DF78 /* TableDelegate.rb */; };
 		06F32E7C115577190099F047 /* FailAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32E7B115577190099F047 /* FailAppDelegate.rb */; };
 		06F32E9D11557A840099F047 /* fail_app_delegate_spec.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */; };
 		06F32FBF1156AEB50099F047 /* data_request.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32FBE1156AEB50099F047 /* data_request.rb */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06555F3511697F880091DF78 /* TableDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TableDelegate.rb; sourceTree = "<group>"; };
 		06F32E7B115577190099F047 /* FailAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = FailAppDelegate.rb; sourceTree = "<group>"; };
 		06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = fail_app_delegate_spec.rb; sourceTree = "<group>"; };
 		06F32E8E115579DA0099F047 /* TestFail.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestFail.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 			children = (
 				06F32E7B115577190099F047 /* FailAppDelegate.rb */,
 				06F32FBE1156AEB50099F047 /* data_request.rb */,
+				06555F3511697F880091DF78 /* TableDelegate.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				06F32E7C115577190099F047 /* FailAppDelegate.rb in Resources */,
 				06F32FBF1156AEB50099F047 /* data_request.rb in Resources */,
 				06F331121156F5B30099F047 /* fail.icns in Resources */,
+				06555F3611697F880091DF78 /* TableDelegate.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
