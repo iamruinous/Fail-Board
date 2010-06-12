@@ -1,17 +1,17 @@
 require 'test/unit'
 
-#require 'ruby_file_to_test'
+require 'ProjectViewController'
 
-class SimpleTest < Test::Unit::TestCase
+class ProjectViewController < Test::Unit::TestCase
   def setup
-    puts 'setup called'
+    @controller = ProjectViewController.new()
   end
   
   def teardown
-    puts 'teardown called'
+    @controller.release()
   end
   
-  def test_true
-    assert true, 'Assertion was true.'
+  def test_poller_gets_initialized
+    assert true, @controller.poller == nil
   end
 end

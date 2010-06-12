@@ -54,9 +54,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		06555F3611697F880091DF78 /* TableDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06555F3511697F880091DF78 /* TableDelegate.rb */; };
+		065C3D7F11B73F8A0001D97A /* Gravatar.rb in Resources */ = {isa = PBXBuildFile; fileRef = 065C3D7E11B73F8A0001D97A /* Gravatar.rb */; };
+		06A8127011A8739B0046EFA3 /* ProjectViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06A8126F11A8739B0046EFA3 /* ProjectViewController.rb */; };
+		06A8127211A874060046EFA3 /* ProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A8127111A874060046EFA3 /* ProjectViewController.xib */; };
+		06A8136611A88FA10046EFA3 /* ProjectPoller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06A8136511A88FA10046EFA3 /* ProjectPoller.rb */; };
+		06A816A411A8EFC70046EFA3 /* Project.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06A816A311A8EFC70046EFA3 /* Project.rb */; };
+		06A8185311A90C520046EFA3 /* Foundation.bridgesupport in Resources */ = {isa = PBXBuildFile; fileRef = 06A8185211A90C520046EFA3 /* Foundation.bridgesupport */; };
 		06F32E7C115577190099F047 /* FailAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32E7B115577190099F047 /* FailAppDelegate.rb */; };
-		06F32E9D11557A840099F047 /* fail_app_delegate_spec.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */; };
 		06F32FBF1156AEB50099F047 /* data_request.rb in Resources */ = {isa = PBXBuildFile; fileRef = 06F32FBE1156AEB50099F047 /* data_request.rb */; };
 		06F331121156F5B30099F047 /* fail.icns in Resources */ = {isa = PBXBuildFile; fileRef = 06F331111156F5B30099F047 /* fail.icns */; };
 		06F9BC801159D5F900166B77 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F9BC7F1159D5F900166B77 /* MacRuby.framework */; };
@@ -90,9 +94,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06555F3511697F880091DF78 /* TableDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TableDelegate.rb; sourceTree = "<group>"; };
+		065C3D7E11B73F8A0001D97A /* Gravatar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gravatar.rb; sourceTree = "<group>"; };
+		06A8126F11A8739B0046EFA3 /* ProjectViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ProjectViewController.rb; sourceTree = "<group>"; };
+		06A8127111A874060046EFA3 /* ProjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectViewController.xib; sourceTree = "<group>"; };
+		06A8136511A88FA10046EFA3 /* ProjectPoller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ProjectPoller.rb; sourceTree = "<group>"; };
+		06A816A311A8EFC70046EFA3 /* Project.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Project.rb; sourceTree = "<group>"; };
+		06A8185211A90C520046EFA3 /* Foundation.bridgesupport */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Foundation.bridgesupport; sourceTree = "<group>"; };
 		06F32E7B115577190099F047 /* FailAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = FailAppDelegate.rb; sourceTree = "<group>"; };
-		06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = fail_app_delegate_spec.rb; sourceTree = "<group>"; };
 		06F32E8E115579DA0099F047 /* TestFail.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestFail.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F32E8F115579DA0099F047 /* TestFail-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestFail-Info.plist"; sourceTree = "<group>"; };
 		06F32FBE1156AEB50099F047 /* data_request.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = data_request.rb; sourceTree = "<group>"; };
@@ -132,12 +140,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06A818D311A915190046EFA3 /* BridgeSupport */ = {
+			isa = PBXGroup;
+			children = (
+				06A8185211A90C520046EFA3 /* Foundation.bridgesupport */,
+			);
+			name = BridgeSupport;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				06F32E7B115577190099F047 /* FailAppDelegate.rb */,
 				06F32FBE1156AEB50099F047 /* data_request.rb */,
-				06555F3511697F880091DF78 /* TableDelegate.rb */,
+				06A8126F11A8739B0046EFA3 /* ProjectViewController.rb */,
+				06A8136511A88FA10046EFA3 /* ProjectPoller.rb */,
+				06A816A311A8EFC70046EFA3 /* Project.rb */,
+				065C3D7E11B73F8A0001D97A /* Gravatar.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -166,7 +185,6 @@
 			children = (
 				172754D5107598EA00D0347B /* stub_test.rb */,
 				17D55CD81076A1A2008207BD /* run_suite.rb */,
-				06F32E87115578B50099F047 /* fail_app_delegate_spec.rb */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -206,10 +224,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06A818D311A915190046EFA3 /* BridgeSupport */,
 				06F331111156F5B30099F047 /* fail.icns */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				06A8127111A874060046EFA3 /* ProjectViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -291,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F32E9D11557A840099F047 /* fail_app_delegate_spec.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +324,12 @@
 				06F32E7C115577190099F047 /* FailAppDelegate.rb in Resources */,
 				06F32FBF1156AEB50099F047 /* data_request.rb in Resources */,
 				06F331121156F5B30099F047 /* fail.icns in Resources */,
-				06555F3611697F880091DF78 /* TableDelegate.rb in Resources */,
+				06A8127011A8739B0046EFA3 /* ProjectViewController.rb in Resources */,
+				06A8127211A874060046EFA3 /* ProjectViewController.xib in Resources */,
+				06A8136611A88FA10046EFA3 /* ProjectPoller.rb in Resources */,
+				06A816A411A8EFC70046EFA3 /* Project.rb in Resources */,
+				06A8185311A90C520046EFA3 /* Foundation.bridgesupport in Resources */,
+				065C3D7F11B73F8A0001D97A /* Gravatar.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
